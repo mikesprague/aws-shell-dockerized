@@ -11,9 +11,9 @@ services:
     stdin_open: true
     tty: true
     volumes:
+      - ./:/mounted-home
       - ${HOME}/.aws:/root/.aws
       - ${HOME}/.aws-login:/root/.aws-login
-      - ./:/mounted-home
     working_dir: "/mounted-home"
 networks:
   default:
