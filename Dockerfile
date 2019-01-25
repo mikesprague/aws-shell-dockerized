@@ -7,10 +7,9 @@ RUN apt-get clean && apt-get update && apt-get -qy upgrade \
     && ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
 
-# install a few dependencies, aws-cli, and aws-shell
+# install aws-cli and aws-shell
 RUN pip install --upgrade pip \
-    && pip install awscli --upgrade pip \
-    && pip install aws-shell --upgrade pip
+    && pip install awscli aws-shell
 
 # clean up after ourselves
 RUN apt-get remove -qy --purge software-properties-common \
