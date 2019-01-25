@@ -113,3 +113,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VS Code stuff
+.history
+.vscode
+.vscode-insiders
+*.code-workspace
