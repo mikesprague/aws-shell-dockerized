@@ -1,0 +1,20 @@
+version: "3"
+services:
+  custodian:
+    build: .
+    container_name: aws-shell
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      # - AWS_PROFILE=zzzzzzzzzz
+    networks:
+      - default
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${HOME}/.aws:/root/.aws
+      - ${HOME}/.aws-login:/root/.aws-login
+      - ./:/mounted-home
+    working_dir: "/mounted-home"
+networks:
+  default:
+    driver: "bridge"
